@@ -31,10 +31,10 @@ Maly wrapper pro Nette Framework pro komunikaci s portalem http://mobilniplatby.
             // Send response
             $this->sendResponse($dispatcher->dispatch($requestFactory->create()));
         }
-        
+
         /**
          * Second example
-         * Predefined CallbackDipatcher
+         * Predefined CallbackDispatcher
          */
         public function actionDefaultSecond()
         {
@@ -46,9 +46,10 @@ Maly wrapper pro Nette Framework pro komunikaci s portalem http://mobilniplatby.
             $dispatcher = new CallbackDispatcher();
 
             // Register confirm callback - you custom answer
-            $dispatcher->registerCallback(new Callback(function (Request $request) {
+            // You can register Nette\Callback or Closure..
+            $dispatcher->registerCallback(function (Request $request) {
                 return new Response("Moje odpoved!");
-            }));
+            });
 
             // Register confirm callback - for auto answer
             $dispatcher->registerConfirmCallback(new Callback(function (ConfirmRequest $request) {
