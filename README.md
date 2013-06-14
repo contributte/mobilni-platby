@@ -4,6 +4,7 @@ Maly wrapper pro Nette Framework pro komunikaci s portalem http://mobilniplatby.
 
 ## Ukazka pouziti
 
+```php
     use MobilniPlatby\CallbackDispatcher;
     use MobilniPlatby\ConfirmRequest;
     use MobilniPlatby\ConfirmResponse;
@@ -60,3 +61,27 @@ Maly wrapper pro Nette Framework pro komunikaci s portalem http://mobilniplatby.
             $this->sendResponse($dispatcher->dispatch($requestFactory->create()));
         }
     }
+```
+
+```php
+namespace MobilniPlatby\Tests;
+
+use MobilniPlatby\AbstractRequest;
+use MobilniPlatby\Dispatcher;
+use MobilniPlatby\Response;
+use Nette\Object;
+
+class TestDispatcher extends Object implements Dispatcher
+{
+
+	/**
+	 * @param AbstractRequest $request
+	 * @return Response
+	 */
+	public function dispatch(AbstractRequest $request)
+	{
+		return new Response("Tohle je super!", "FREE12039123");
+	}
+
+}
+```
