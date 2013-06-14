@@ -5,62 +5,62 @@ Maly wrapper pro Nette Framework pro komunikaci s portalem http://mobilniplatby.
 ## Ukazka pouziti
 
 ```php
-    use MobilniPlatby\CallbackDispatcher;
-    use MobilniPlatby\ConfirmRequest;
-    use MobilniPlatby\ConfirmResponse;
-    use MobilniPlatby\Request;
-    use MobilniPlatby\RequestFactory;
-    use MobilniPlatby\Response;
-    use MobilniPlatby\Tests\TestDispatcher;
-    use Nette\Callback;
+use MobilniPlatby\CallbackDispatcher;
+use MobilniPlatby\ConfirmRequest;
+use MobilniPlatby\ConfirmResponse;
+use MobilniPlatby\Request;
+use MobilniPlatby\RequestFactory;
+use MobilniPlatby\Response;
+use MobilniPlatby\Tests\TestDispatcher;
+use Nette\Callback;
 
-    class SmsPresenter extends \Nette\Application\UI\Presenter
+class SmsPresenter extends \Nette\Application\UI\Presenter
+{
+
+    /**
+     * First example
+     * Your custom dispatcher
+     */
+    public function actionDefaultFirst()
+    {
+        // Create request factory
+        $requestFactory = new RequestFactory($this->getHttpRequest());
+
+        // Create your dispatcher
+        $dispatcher = new TestDispatcher();
+
+        // Send response
+        $this->sendResponse($dispatcher->dispatch($requestFactory->create()));
+    }
+
+    /**
+     * Second example
+     * Predefined CallbackDispatcher
+     */
+    public function actionDefaultSecond()
     {
 
-        /**
-         * First example
-         * Your custom dispatcher
-         */
-        public function actionDefaultFirst()
-        {
-            // Create request factory
-            $requestFactory = new RequestFactory($this->getHttpRequest());
+        // Create request factory
+        $requestFactory = new RequestFactory($this->getHttpRequest());
 
-            // Create your dispatcher
-            $dispatcher = new TestDispatcher();
+        // Create dispatcher
+        $dispatcher = new CallbackDispatcher();
 
-            // Send response
-            $this->sendResponse($dispatcher->dispatch($requestFactory->create()));
-        }
+        // Register confirm callback - you custom answer
+        // You can register Nette\Callback or Closure..
+        $dispatcher->registerCallback(function (Request $request) {
+            return new Response("Moje odpoved!");
+        });
 
-        /**
-         * Second example
-         * Predefined CallbackDispatcher
-         */
-        public function actionDefaultSecond()
-        {
+        // Register confirm callback - for auto answer
+        $dispatcher->registerConfirmCallback(new Callback(function (ConfirmRequest $request) {
+            return new ConfirmResponse();
+        }));
 
-            // Create request factory
-            $requestFactory = new RequestFactory($this->getHttpRequest());
-
-            // Create dispatcher
-            $dispatcher = new CallbackDispatcher();
-
-            // Register confirm callback - you custom answer
-            // You can register Nette\Callback or Closure..
-            $dispatcher->registerCallback(function (Request $request) {
-                return new Response("Moje odpoved!");
-            });
-
-            // Register confirm callback - for auto answer
-            $dispatcher->registerConfirmCallback(new Callback(function (ConfirmRequest $request) {
-                return new ConfirmResponse();
-            }));
-
-            // Send response
-            $this->sendResponse($dispatcher->dispatch($requestFactory->create()));
-        }
+        // Send response
+        $this->sendResponse($dispatcher->dispatch($requestFactory->create()));
     }
+}
 ```
 
 ```php
