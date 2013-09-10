@@ -2,6 +2,10 @@
 
 namespace MobilniPlatby;
 
+use MobilniPlatby\Request\AbstractRequest;
+use MobilniPlatby\Response\AbstractResponse;
+use MobilniPlatby\Response\ConfirmResponse;
+use MobilniPlatby\Response\Response;
 use Nette\Callback;
 use Nette\Diagnostics\Debugger;
 use Nette\InvalidArgumentException;
@@ -18,20 +22,24 @@ final class CallbackDispatcher extends Object implements Dispatcher
 
 	/**
 	 * @param AbstractRequest $request
-	 * @return Response
+	 * @return AbstractResponse
+	 * @throws DispatcherException
 	 */
 	public function dispatch(AbstractRequest $request)
 	{
-		if ($request->isConfirm()) {
-			if (!$this->dispatchConfirmCallback) {
-				throw new DispatcherException("Dispatcher: Confirm callback is not defined.");
-			}
-			return $this->dispatchConfirmCallback->invokeArgs(array($request));
-		} else {
-			if (!$this->dispatchCallback) {
-				throw new DispatcherException("Dispatcher: Callback is not defined.");
-			}
-			return $this->dispatchCallback->invokeArgs(array($request));
+		switch ($request->getType()) {
+			case AbstractRequest::TYPE_CONFIRM:
+				if (!$this->dispatchConfirmCallback) {
+					throw new DispatcherException("Dispatcher: Confirm callback is not defined.");
+				}
+				return $this->dispatchConfirmCallback->invokeArgs(array($request, $this->prepareConfirmResponse()));
+			case AbstractRequest::TYPE_NORMAL:
+				if (!$this->dispatchCallback) {
+					throw new DispatcherException("Dispatcher: Callback is not defined.");
+				}
+				return $this->dispatchCallback->invokeArgs(array($request, $this->prepareResponse()));
+			default:
+				throw new DispatcherException("Dispatcher: Uknown request type.");
 		}
 	}
 
@@ -64,6 +72,24 @@ final class CallbackDispatcher extends Object implements Dispatcher
 			throw new InvalidArgumentException("Callback must be \Closure or Nette\Callback type.");
 		}
 		return $cb;
+	}
+
+	/**
+	 * @return Response
+	 */
+	private function prepareResponse()
+	{
+		$response = new Response(NULL, NULL);
+		return $response;
+	}
+
+	/**
+	 * @return ConfirmResponse
+	 */
+	private function prepareConfirmResponse()
+	{
+		$response = new ConfirmResponse();
+		return $response;
 	}
 
 }

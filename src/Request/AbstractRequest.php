@@ -1,12 +1,17 @@
 <?php
 
-namespace MobilniPlatby;
+namespace MobilniPlatby\Request;
 
 use Nette\DateTime;
+use Nette\Diagnostics\Debugger;
 use Nette\Object;
 
 abstract class AbstractRequest extends Object
 {
+
+	/** Request types */
+	const TYPE_NORMAL = 1;
+	const TYPE_CONFIRM = 2;
 
 	/** @var  int */
 	protected $id;
@@ -38,7 +43,8 @@ abstract class AbstractRequest extends Object
 	 */
 	protected function setTimestamp($timestamp)
 	{
-		$this->timestamp = DateTime::from($timestamp);
+		$time = strtotime($timestamp);
+		$this->timestamp = new DateTime($time);
 	}
 
 	/**
@@ -50,7 +56,7 @@ abstract class AbstractRequest extends Object
 	}
 
 	/**
-	 * @return bool
+	 * @return int
 	 */
-	abstract function isConfirm();
+	abstract function getType();
 }

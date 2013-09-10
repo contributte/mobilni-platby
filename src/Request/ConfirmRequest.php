@@ -1,6 +1,8 @@
 <?php
 
-namespace MobilniPlatby;
+namespace MobilniPlatby\Request;
+
+use MobilniPlatby\RequestException;
 
 class ConfirmRequest extends AbstractRequest
 {
@@ -45,14 +47,15 @@ class ConfirmRequest extends AbstractRequest
 	{
 		$this->id = $id;
 		$this->request = $request;
-		$this->message = $message;
-		$this->status = $status;
-		$this->timestamp = $timestamp;
+		$this->setMessage($message);
+		$this->setStatus($status);
+		$this->setTimestamp($timestamp);
 		$this->att = $att;
 	}
 
 	/**
-	 * @param string $message
+	 * @param $message
+	 * @throws \MobilniPlatby\RequestException
 	 */
 	protected function setMessage($message)
 	{
@@ -109,7 +112,8 @@ class ConfirmRequest extends AbstractRequest
 	}
 
 	/**
-	 * @param string $status
+	 * @param $status
+	 * @throws \MobilniPlatby\RequestException
 	 */
 	protected function setStatus($status)
 	{
@@ -143,10 +147,10 @@ class ConfirmRequest extends AbstractRequest
 	}
 
 	/**
-	 * @return bool
+	 * @return int
 	 */
-	public function isConfirm()
+	public function getType()
 	{
-		return TRUE;
+		return self::TYPE_CONFIRM;
 	}
 }

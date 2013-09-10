@@ -1,11 +1,8 @@
 <?php
 
-namespace MobilniPlatby;
+namespace MobilniPlatby\Response;
 
-use Nette\Application\IResponse;
-use Nette\Object;
-
-class ConfirmResponse extends Object implements IResponse
+class ConfirmResponse extends AbstractResponse
 {
 
 	/**
@@ -16,6 +13,5 @@ class ConfirmResponse extends Object implements IResponse
 	{
 		$httpResponse->setCode(204);
 	}
-
 
 }

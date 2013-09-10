@@ -1,11 +1,10 @@
 <?php
 
-namespace MobilniPlatby;
+namespace MobilniPlatby\Response;
 
-use Nette\Application\IResponse;
-use Nette\Object;
+use MobilniPlatby\ResponseException;
 
-class Response extends Object implements IResponse
+class Response extends AbstractResponse
 {
 
 	/** @var  string */
@@ -26,10 +25,12 @@ class Response extends Object implements IResponse
 
 	/**
 	 * @param string $level
+	 * @return self - provide fluent interface
 	 */
 	public function setLevel($level)
 	{
 		$this->level = $level;
+		return $this;
 	}
 
 	/**
@@ -42,10 +43,12 @@ class Response extends Object implements IResponse
 
 	/**
 	 * @param string $text
+	 * @return self - provide fluent interface
 	 */
 	public function setText($text)
 	{
 		$this->text = $text;
+		return $this;
 	}
 
 	/**

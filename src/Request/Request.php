@@ -1,6 +1,8 @@
 <?php
 
-namespace MobilniPlatby;
+namespace MobilniPlatby\Request;
+
+use MobilniPlatby\RequestException;
 
 class Request extends AbstractRequest
 {
@@ -42,8 +44,8 @@ class Request extends AbstractRequest
 		$this->phone = $phone;
 		$this->shortcode = $shortcode;
 		$this->text = $text;
-		$this->timestamp = $timestamp;
-		$this->operator = $operator;
+		$this->setTimestamp($timestamp);
+		$this->setOperator($operator);
 		$this->att = $att;
 		$this->country = $country;
 	}
@@ -57,7 +59,8 @@ class Request extends AbstractRequest
 	}
 
 	/**
-	 * @param string $operator
+	 * @param $operator
+	 * @throws \MobilniPlatby\RequestException
 	 */
 	protected function setOperator($operator)
 	{
@@ -112,10 +115,10 @@ class Request extends AbstractRequest
 	}
 
 	/**
-	 * @return bool
+	 * @return int
 	 */
-	public function isConfirm()
+	public function getType()
 	{
-		return FALSE;
+		return self::TYPE_NORMAL;
 	}
 }
