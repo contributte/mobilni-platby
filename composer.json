@@ -1,0 +1,22 @@
+{
+    "name": "f3l1x/MobilniPlatby",
+    "description": "Dispatcher for Mobile Payments (www.mobilniplatby.cz) for Nette Framework",
+    "keywords": ["mobile", "payment", "nette"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Milan Šulc",
+            "email": "rkfelix@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": ["src/"]
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "nette/nette": "~2.0"
+    },
+    "require-dev": {
+        "nette/tester": "@dev"
+    }
+}
