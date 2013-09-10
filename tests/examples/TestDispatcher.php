@@ -2,11 +2,10 @@
 
 namespace MobilniPlatby\Tests;
 
-use MobilniPlatby\AbstractRequest;
 use MobilniPlatby\Dispatcher;
-use MobilniPlatby\Request;
-use MobilniPlatby\Response;
-use Nette\Diagnostics\Debugger;
+use MobilniPlatby\Request\AbstractRequest;
+use MobilniPlatby\Response\AbstractResponse;
+use MobilniPlatby\Response\Response;
 use Nette\Object;
 
 class TestDispatcher extends Object implements Dispatcher
@@ -14,7 +13,8 @@ class TestDispatcher extends Object implements Dispatcher
 
 	/**
 	 * @param AbstractRequest $request
-	 * @return Response
+	 * @param AbstractResponse $response
+	 * @return AbstractResponse
 	 */
 	public function dispatch(AbstractRequest $request)
 	{
