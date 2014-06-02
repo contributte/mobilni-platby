@@ -1,22 +1,29 @@
 {
-    "name": "f3l1x/MobilniPlatby",
-    "description": "Dispatcher for Mobile Payments (www.mobilniplatby.cz) for Nette Framework",
-    "keywords": ["mobile", "payment", "nette"],
+    "name": "f3l1x/mobilni-platby",
+    "type": "library",
+    "description": "Dispatcher for Mobile Payments (www.mobilniplatby.cz) for Nette Framework.",
     "license": "MIT",
+    "homepage": "http://github.com/f3l1x/Mobilni-platby",
     "authors": [
         {
-            "name": "Milan Šulc",
-            "email": "rkfelix@gmail.com"
+            "name": "Milan Felix Sulc",
+            "homepage": "http://www.milansulc.cz"
         }
     ],
-    "autoload": {
-        "classmap": ["src/"]
-    },
     "require": {
-        "php": ">=5.3.0",
-        "nette/nette": "~2.0"
+        "php": ">= 5.4",
+        "nette/application": "2.2.*",
+        "nette/http": "2.2.*",
+        "nette/utils": "2.2.*"
     },
     "require-dev": {
-        "nette/tester": "@dev"
+        "nette/tester": "1.*"
+    },
+    "autoload": {
+        "classmap": ["src/"],
+        "files": ["src/MobilniPlatby/exceptions.php"]
+    },
+    "config": {
+        "vendor-dir": "vendor"
     }
 }

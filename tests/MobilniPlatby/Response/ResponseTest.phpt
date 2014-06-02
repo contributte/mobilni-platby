@@ -1,11 +1,22 @@
 <?php
 
+/**
+ * Test: MobilniPlatby\Response
+ *
+ * @testCase  MobilniPlatby\Response\ResponseTest
+ * @author Milan Felix Sulc <rkfelix@gmail.com>
+ * @package MobilniPlatby
+ */
+
 use MobilniPlatby\Response\Response;
 use Tester\Assert;
 use Tester\TestCase;
 
-require_once __DIR__ . '/bootstrap.php';
+require_once __DIR__ . '/../bootstrap.php';
 
+/**
+ * @author Milan Felix Sulc <rkfelix@gmail.com>
+ */
 class ResponseTest extends TestCase
 {
 
@@ -33,5 +44,4 @@ class ResponseTest extends TestCase
 	}
 }
 
-$tc = new ResponseTest();
-$tc->run();
+(new ResponseTest())->run();

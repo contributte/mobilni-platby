@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+sh ../vendor/bin/tester -w %CD%\MobilniPlatby -s -j 40 -log ./mobilniplatby.log
+rm "./tmp" -f -R
