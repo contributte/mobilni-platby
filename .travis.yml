@@ -9,7 +9,7 @@ matrix:
     allow_failures:
         - php: hhvm
 
-script: ./vendor/bin/tester -s ./tests
+script: ./vendor/bin/tester -s ./tests/MobilniPlatby
 
 after_failure:
     # Print *.actual content
