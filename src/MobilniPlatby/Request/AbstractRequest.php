@@ -49,7 +49,7 @@ abstract class AbstractRequest
      */
     protected function setTimestamp($timestamp)
     {
-        $this->timestamp = new DateTime($timestamp);
+        $this->timestamp = DateTime::from(strtotime($timestamp));
     }
 
     /**
