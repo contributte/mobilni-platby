@@ -80,7 +80,7 @@ class RequestFactory
         $args = $this->request->getQuery();
         $keys = array('id', 'request', 'message', 'status', 'timestamp', 'att');
         foreach ($keys as $key) {
-            if (!in_array($key, $args)) {
+            if (!array_key_exists($key, $args)) {
                 throw new RequestException("Key '$key' missing in request parameters.");
             }
         }
