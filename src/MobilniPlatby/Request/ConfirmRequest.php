@@ -99,7 +99,8 @@ class ConfirmRequest extends AbstractRequest
                 $this->message = self::MESSAGE_USAGE_RATE_EXCEEDED;
                 break;
             default:
-                throw new RequestException("Request: Uknown message '$message'.");
+                $this->message = $message;
+                //throw new RequestException("Request: Uknown message '$message'.");
         }
     }
 
