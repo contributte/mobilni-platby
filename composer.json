@@ -3,7 +3,7 @@
     "type": "library",
     "description": "Dispatcher for Mobile Payments (www.mobilniplatby.cz) for Nette Framework.",
     "license": "MIT",
-    "homepage": "http://github.com/f3l1x/Mobilni-platby",
+    "homepage": "https://github.com/f3l1x/Mobilni-platby",
     "authors": [
         {
             "name": "Milan Felix Sulc",
