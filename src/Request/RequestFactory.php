@@ -8,7 +8,7 @@ use Nette\Http\Request;
 /**
  * Info request factory
  *
- * @version 1.0-beta
+ * @version 1.0.0
  * @author Milan Felix Sulc <rkfelix@gmail.com>
  */
 class RequestFactory
@@ -48,7 +48,7 @@ class RequestFactory
     {
         // Validate request params
         $args = $this->request->getQuery();
-        $keys = array('id', 'phone', 'shortcode', 'sms', 'timestamp', 'operator', 'country', 'att');
+        $keys = ['id', 'phone', 'shortcode', 'sms', 'timestamp', 'operator', 'country', 'att'];
         foreach ($keys as $key) {
             if (!array_key_exists($key, $args)) {
                 throw new RequestException("Key '$key' missing in request parameters.");
@@ -78,7 +78,7 @@ class RequestFactory
     {
         // Validate request params
         $args = $this->request->getQuery();
-        $keys = array('id', 'request', 'message', 'status', 'timestamp', 'att');
+        $keys = ['id', 'request', 'message', 'status', 'timestamp', 'att'];
         foreach ($keys as $key) {
             if (!array_key_exists($key, $args)) {
                 throw new RequestException("Key '$key' missing in request parameters.");

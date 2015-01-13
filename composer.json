@@ -7,7 +7,7 @@
     "authors": [
         {
             "name": "Milan Felix Sulc",
-            "homepage": "http://www.milansulc.cz"
+            "homepage": "http://jfx.cz"
         }
     ],
     "require": {
@@ -21,7 +21,7 @@
     },
     "autoload": {
         "classmap": ["src/"],
-        "files": ["src/MobilniPlatby/exceptions.php"]
+        "files": ["src/exceptions.php"]
     },
     "config": {
         "vendor-dir": "vendor"

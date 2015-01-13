@@ -8,7 +8,7 @@ use MobilniPlatby\Response\AbstractResponse;
 /**
  * Dispatcher interface
  *
- * @version 1.0-beta
+ * @version 1.0.0
  * @author Milan Felix Sulc <rkfelix@gmail.com>
  */
 interface Dispatcher

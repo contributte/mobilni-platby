@@ -14,7 +14,7 @@ use Nette\Utils\Callback;
 /**
  * Callback dispatcher
  *
- * @version 1.0-beta
+ * @version 1.0.0
  * @author Milan Felix Sulc <rkfelix@gmail.com>
  */
 final class CallbackDispatcher extends Object implements Dispatcher
@@ -38,7 +38,7 @@ final class CallbackDispatcher extends Object implements Dispatcher
                 if (!$this->confirmCallback) {
                     throw new DispatcherException("Dispatcher: Confirm callback is not defined.");
                 }
-                $res = Callback::invokeArgs($this->confirmCallback, array($request, $this->prepareConfirmResponse()));
+                $res = Callback::invokeArgs($this->confirmCallback, [$request, $this->prepareConfirmResponse()]);
                 if (!($res instanceof ConfirmResponse)) {
                     throw new DispatcherException('Return value from callback is not ConfirmResponse type.');
                 }
@@ -47,7 +47,7 @@ final class CallbackDispatcher extends Object implements Dispatcher
                 if (!$this->smsCallback) {
                     throw new DispatcherException("Dispatcher: Info callback is not defined.");
                 }
-                $res = Callback::invokeArgs($this->smsCallback, array($request, $this->prepareResponse()));
+                $res = Callback::invokeArgs($this->smsCallback, [$request, $this->prepareResponse()]);
                 if (!($res instanceof Response)) {
                     throw new DispatcherException('Return value from callback is not Response type.');
                 }
