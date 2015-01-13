@@ -14,7 +14,7 @@ use Nette\Utils\Callback;
 /**
  * Callback dispatcher
  *
- * @version 1.0-beta
+ * @version 1.0
  * @author Milan Felix Sulc <rkfelix@gmail.com>
  */
 final class CallbackDispatcher extends Object implements Dispatcher

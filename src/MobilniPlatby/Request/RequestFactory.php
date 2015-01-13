@@ -8,7 +8,7 @@ use Nette\Http\Request;
 /**
  * Info request factory
  *
- * @version 1.0-beta
+ * @version 1.0
  * @author Milan Felix Sulc <rkfelix@gmail.com>
  */
 class RequestFactory
