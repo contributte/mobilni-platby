@@ -9,7 +9,7 @@ matrix:
     allow_failures:
         - php: hhvm
 
-script: ./vendor/bin/tester -s ./tests/MobilniPlatby
+script: ./vendor/bin/tester -p php -s ./tests/MobilniPlatby
 
 after_failure:
     # Print *.actual content
@@ -18,5 +18,5 @@ after_failure:
 before_script:
     # Update Composer
     - composer self-update
-    # Install Nette Tester etc..
+    # Install Nette Tester
     - composer install --no-interaction --dev --prefer-source
