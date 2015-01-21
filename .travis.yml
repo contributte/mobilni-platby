@@ -6,8 +6,6 @@ php:
     - hhvm
 
 matrix:
-    allow_failures:
-        - php: hhvm
 
 script: ./vendor/bin/tester -p php -s ./tests/MobilniPlatby
 

@@ -1,9 +1,9 @@
 {
-    "name": "f3l1x/mobilni-platby",
+    "name": "minetro/mobilni-platby",
     "type": "library",
     "description": "Dispatcher for Mobile Payments (www.mobilniplatby.cz) for Nette Framework.",
     "license": "MIT",
-    "homepage": "https://github.com/f3l1x/Mobilni-platby",
+    "homepage": "https://github.com/minetro/mobilni-platby",
     "authors": [
         {
             "name": "Milan Felix Sulc",
@@ -17,7 +17,7 @@
         "nette/utils": "2.2.*"
     },
     "require-dev": {
-        "nette/tester": "1.*"
+        "nette/tester": "1.3.*"
     },
     "autoload": {
         "classmap": ["src/"],
