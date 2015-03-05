@@ -13,5 +13,5 @@ Install
 ------------
 
 ```sh
-$ composer require minetro/mobilni-platby:1.0.0
+$ composer require minetro/mobilni-platby:~1.0.0
 ```
