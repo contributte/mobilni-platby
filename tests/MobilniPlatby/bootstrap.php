@@ -2,10 +2,6 @@
 
 /**
  * Test boostrap.
- *
- * @author David Grudl
- * @author Milan Felix Sulc
- * @package Econea\Test
  */
 
 
