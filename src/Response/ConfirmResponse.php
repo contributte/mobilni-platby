@@ -7,7 +7,7 @@ use Nette;
 /**
  * Confirm response
  *
- * @version 1.0.0-beta
+ * @version 1.0.1
  * @author Milan Felix Sulc <rkfelix@gmail.com>
  */
 class ConfirmResponse extends AbstractResponse

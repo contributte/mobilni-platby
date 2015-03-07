@@ -7,7 +7,7 @@ use MobilniPlatby\RequestException;
 /**
  * Info request
  *
- * @version 1.0.0
+ * @version 1.0.1
  * @author Milan Felix Sulc <rkfelix@gmail.com>
  */
 class SmsRequest extends AbstractRequest

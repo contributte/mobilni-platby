@@ -7,7 +7,7 @@ use Nette\Utils\DateTime;
 /**
  * Abstract request
  *
- * @version 1.0.0
+ * @version 1.0.1
  * @author Milan Felix Sulc <rkfelix@gmail.com>
  */
 abstract class AbstractRequest
