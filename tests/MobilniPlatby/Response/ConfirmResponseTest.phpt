@@ -9,9 +9,9 @@
  */
 
 use MobilniPlatby\Response\ConfirmResponse;
+use Nette\Http\IResponse;
 use Nette\Http\RequestFactory;
 use Nette\Http\Response;
-use Nette\Http\IResponse;
 use Tester\Assert;
 use Tester\TestCase;
 
@@ -116,7 +116,7 @@ final class FakeResponse implements IResponse
     /**
      * Sets the number of seconds before a page cached on a browser expires.
      *
-     * @param  mixed  \Nette\Http\timestamp or number of seconds
+     * @param  string|int|\DateTime time , value 0 means "until the browser is closed"
      * @return void
      */
     function setExpiration($seconds)
@@ -135,9 +135,21 @@ final class FakeResponse implements IResponse
     }
 
     /**
+     * Returns value of an HTTP header.
+     *
+     * @param  string
+     * @param  mixed
+     * @return mixed
+     */
+    function getHeader($header, $default = NULL)
+    {
+        // TODO: Implement getHeader() method.
+    }
+
+    /**
      * Returns a list of headers to sent.
      *
-     * @return array
+     * @return array (name => value)
      */
     function getHeaders()
     {
@@ -174,6 +186,7 @@ final class FakeResponse implements IResponse
     {
         // TODO: Implement deleteCookie() method.
     }
+
 
 }
 
