@@ -32,44 +32,7 @@ if (extension_loaded('xdebug')) {
     Tester\CodeCoverage\Collector::start(__DIR__ . '/coverage.dat');
 }
 
-
-function id($val)
-{
-    return $val;
-}
-
-
-class Notes
-{
-    static public $notes = [];
-
-    public static function add($message)
-    {
-        self::$notes[] = $message;
-    }
-
-    public static function fetch()
-    {
-        $res = self::$notes;
-        self::$notes = [];
-        return $res;
-    }
-
-}
-
-
-function before(\Closure $function = NULL)
-{
-    static $val;
-    if (!func_num_args()) {
-        return ($val ? $val() : NULL);
-    }
-    $val = $function;
-}
-
-
 function test(\Closure $function)
 {
-    before();
     $function();
 }
