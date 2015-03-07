@@ -7,7 +7,7 @@ Mobilni platby
 [![Code Climate](https://codeclimate.com/github/minetro/mobilni-platby/badges/gpa.svg)](https://codeclimate.com/github/minetro/mobilni-platby)
 [![HHVM Status](https://img.shields.io/hhvm/minetro/mobilni-platby.svg?style=flat)](http://hhvm.h4cc.de/package/minetro/mobilni-platby)
 
-Wrapper for Mobilni platby (http://www.mobilniplatby.cz) for Nette Framework >= 2.2.0
+Wrapper for Mobilni platby (http://www.mobilniplatby.cz) for Nette Framework >= 2.2.0, <= 2.4.0
 
 Install
 ------------
