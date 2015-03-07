@@ -3,7 +3,6 @@
 namespace MobilniPlatby;
 
 use MobilniPlatby\Request\AbstractRequest;
-use MobilniPlatby\Request\ConfirmRequest;
 use MobilniPlatby\Response\AbstractResponse;
 use MobilniPlatby\Response\ConfirmResponse;
 use MobilniPlatby\Response\Response;

@@ -2,8 +2,8 @@
 
 namespace MobilniPlatby\Response;
 
-use Nette;
 use MobilniPlatby\ResponseException;
+use Nette;
 
 /**
  * Info response
@@ -97,6 +97,5 @@ class Response extends AbstractResponse
 
         echo $response;
     }
-
 
 }

@@ -8,13 +8,12 @@
  * @package MobilniPlatby
  */
 
-use MobilniPlatby\CallbackDispatcher;
-use MobilniPlatby\Request\SmsRequest;
-use MobilniPlatby\Request\ConfirmRequest;
-use MobilniPlatby\Response\ConfirmResponse;
 use MobilniPlatby\Dispatcher;
 use MobilniPlatby\Request\AbstractRequest;
+use MobilniPlatby\Request\ConfirmRequest;
+use MobilniPlatby\Request\SmsRequest;
 use MobilniPlatby\Response\AbstractResponse;
+use MobilniPlatby\Response\ConfirmResponse;
 use MobilniPlatby\Response\Response;
 use Tester\Assert;
 use Tester\TestCase;

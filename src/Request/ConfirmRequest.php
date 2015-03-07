@@ -100,7 +100,7 @@ class ConfirmRequest extends AbstractRequest
                 break;
             default:
                 $this->message = $message;
-                //throw new RequestException("Request: Uknown message '$message'.");
+            //throw new RequestException("Request: Uknown message '$message'.");
         }
     }
 

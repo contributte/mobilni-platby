@@ -9,10 +9,10 @@
  */
 
 use MobilniPlatby\CallbackDispatcher;
-use MobilniPlatby\Request\SmsRequest;
 use MobilniPlatby\Request\ConfirmRequest;
-use MobilniPlatby\Response\Response;
+use MobilniPlatby\Request\SmsRequest;
 use MobilniPlatby\Response\ConfirmResponse;
+use MobilniPlatby\Response\Response;
 use Tester\Assert;
 use Tester\TestCase;
 

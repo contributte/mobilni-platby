@@ -1,12 +1,12 @@
 <?php
 
 use MobilniPlatby\CallbackDispatcher;
-use MobilniPlatby\Tests\TestDispatcher;
+use MobilniPlatby\Request\ConfirmRequest;
 use MobilniPlatby\Request\RequestFactory;
 use MobilniPlatby\Request\SmsRequest;
-use MobilniPlatby\Response\Response;
 use MobilniPlatby\Response\ConfirmResponse;
-use MobilniPlatby\Request\ConfirmRequest;
+use MobilniPlatby\Response\Response;
+use MobilniPlatby\Tests\TestDispatcher;
 
 class SmsPresenter extends \Nette\Application\UI\Presenter
 {
