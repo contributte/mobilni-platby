@@ -1,5 +1,4 @@
-Mobilni platby
-======
+#Mobilni platby
 
 [![Build Status](https://travis-ci.org/minetro/mobilni-platby.svg?branch=master)](https://travis-ci.org/minetro/mobilni-platby)
 [![Downloads this Month](https://img.shields.io/packagist/dm/minetro/mobilni-platby.svg?style=flat)](https://packagist.org/packages/minetro/mobilni-platby)
@@ -9,9 +8,11 @@ Mobilni platby
 
 Wrapper for Mobilni platby (http://www.mobilniplatby.cz) for Nette Framework >= 2.2.0, <= 2.4.0
 
-Install
-------------
+## Install
 
 ```sh
 $ composer require minetro/mobilni-platby:~1.0.0
 ```
+## Usage
+
+See more in [examples](https://github.com/minetro/mobilni-platby/tree/master/examples).
