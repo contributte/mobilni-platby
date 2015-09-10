@@ -1,7 +1,7 @@
 #Mobilni platby
 
 [![Build Status](https://travis-ci.org/minetro/mobilni-platby.svg?branch=master)](https://travis-ci.org/minetro/mobilni-platby)
-[![Downloads this Month](https://img.shields.io/packagist/dm/minetro/mobilni-platby.svg?style=flat)](https://packagist.org/packages/minetro/mobilni-platby)
+[![Downloads total](https://img.shields.io/packagist/dt/minetro/mobilni-platby.svg?style=flat)](https://packagist.org/packages/minetro/mobilni-platby)
 [![Latest stable](https://img.shields.io/packagist/v/minetro/mobilni-platby.svg?style=flat)](https://packagist.org/packages/minetro/mobilni-platby)
 [![Code Climate](https://codeclimate.com/github/minetro/mobilni-platby/badges/gpa.svg)](https://codeclimate.com/github/minetro/mobilni-platby)
 [![HHVM Status](https://img.shields.io/hhvm/minetro/mobilni-platby.svg?style=flat)](http://hhvm.h4cc.de/package/minetro/mobilni-platby)
