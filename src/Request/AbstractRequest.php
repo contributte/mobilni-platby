@@ -1,70 +1,44 @@
-<?php
+<?php declare(strict_types = 1);
 
-namespace MobilniPlatby\Request;
+namespace Contributte\MobilniPlatby\Request;
 
 use Nette\Utils\DateTime;
 
-/**
- * Abstract request
- *
- * @version 1.0.1
- * @author Milan Felix Sulc <rkfelix@gmail.com>
- */
 abstract class AbstractRequest
 {
 
-    /** Request types */
-    const TYPE_SMS = 1;
-    const TYPE_CONFIRM = 2;
+	public const TYPE_SMS = 1;
+	public const TYPE_CONFIRM = 2;
 
-    /** @var int */
-    protected $id;
+	/** @var int */
+	protected $id;
 
-    /** @var int */
-    protected $att;
+	/** @var int */
+	protected $att;
 
-    /** @var DateTime */
-    protected $timestamp;
+	/** @var DateTime */
+	protected $timestamp;
 
-    /** GETTERS/SETTERS ***************************************************** */
+	public function getAtt(): int
+	{
+		return $this->att;
+	}
 
-    /**
-     * @return int
-     */
-    public function getAtt()
-    {
-        return $this->att;
-    }
+	public function getId(): int
+	{
+		return $this->id;
+	}
 
-    /**
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
+	protected function setTimestamp(int $timestamp): void
+	{
+		$this->timestamp = DateTime::from($timestamp);
+	}
 
-    /**
-     * @param mixed $timestamp
-     */
-    protected function setTimestamp($timestamp)
-    {
-        $this->timestamp = DateTime::from(strtotime($timestamp));
-    }
+	public function getTimestamp(): DateTime
+	{
+		return $this->timestamp;
+	}
 
-    /**
-     * @return DateTime
-     */
-    public function getTimestamp()
-    {
-        return $this->timestamp;
-    }
-
-    /** ABSTRACT METHODS **************************************************** */
-
-    /**
-     * @return int
-     */
-    abstract function getType();
+	abstract public function getType(): int;
 
 }

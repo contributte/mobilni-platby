@@ -1,132 +1,95 @@
-<?php
+<?php declare(strict_types = 1);
 
-namespace MobilniPlatby\Request;
+namespace Contributte\MobilniPlatby\Request;
 
-use MobilniPlatby\RequestException;
+use Contributte\MobilniPlatby\RequestException;
 
-/**
- * Info request
- *
- * @version 1.0.1
- * @author Milan Felix Sulc <rkfelix@gmail.com>
- */
 class SmsRequest extends AbstractRequest
 {
 
-    /** OPERATORS */
-    const OPERATOR_TMOBILE = "TMOBILE";
-    const OPERATOR_O2 = "O2";
-    const OPERATOR_VODAFONE = "VODAFONE";
-    const OPERATOR_ORANGE = "ORANGE";
+	public const OPERATOR_TMOBILE = 'TMOBILE';
+	public const OPERATOR_O2 = 'O2';
+	public const OPERATOR_VODAFONE = 'VODAFONE';
+	public const OPERATOR_ORANGE = 'ORANGE';
 
-    /** @var string */
-    protected $operator;
+	/** @var string */
+	protected $operator;
 
-    /** @var string */
-    protected $country;
+	/** @var string */
+	protected $country;
 
-    /** @var string */
-    protected $shortcode;
+	/** @var string */
+	protected $shortcode;
 
-    /** @var string */
-    protected $text;
+	/** @var string */
+	protected $text;
 
-    /** @var string */
-    protected $phone;
+	/** @var string */
+	protected $phone;
 
-    /**
-     * @param int $id
-     * @param int $phone
-     * @param int $shortcode
-     * @param string $text
-     * @param mixed $timestamp
-     * @param string $operator
-     * @param string $country
-     * @param int $att
-     */
-    function __construct($id, $phone, $shortcode, $text, $timestamp, $operator, $country, $att)
-    {
-        $this->id = $id;
-        $this->phone = $phone;
-        $this->shortcode = $shortcode;
-        $this->text = $text;
-        $this->setTimestamp($timestamp);
-        $this->setOperator($operator);
-        $this->att = $att;
-        $this->country = $country;
-    }
+	public function __construct(int $id, string $phone, string $shortcode, string $text, int $timestamp, string $operator, string $country, int $att)
+	{
+		$this->id = $id;
+		$this->phone = $phone;
+		$this->shortcode = $shortcode;
+		$this->text = $text;
+		$this->setTimestamp($timestamp);
+		$this->setOperator($operator);
+		$this->att = $att;
+		$this->country = $country;
+	}
 
-    /** GETTERS/SETTERS ***************************************************** */
+	public function getCountry(): string
+	{
+		return $this->country;
+	}
 
-    /**
-     * @return string
-     */
-    public function getCountry()
-    {
-        return $this->country;
-    }
+	/**
+	 * @throws RequestException
+	 */
+	protected function setOperator(string $operator): void
+	{
+		switch ($operator) {
+			case self::OPERATOR_O2:
+				$this->operator = self::OPERATOR_O2;
+				break;
+			case self::OPERATOR_ORANGE:
+				$this->operator = self::OPERATOR_ORANGE;
+				break;
+			case self::OPERATOR_TMOBILE:
+				$this->operator = self::OPERATOR_TMOBILE;
+				break;
+			case self::OPERATOR_VODAFONE:
+				$this->operator = self::OPERATOR_VODAFONE;
+				break;
+			default:
+				throw new RequestException(sprintf("Request: Uknown operator '%s'.", $operator));
+		}
+	}
 
-    /**
-     * @param string $operator
-     * @throws RequestException
-     */
-    protected function setOperator($operator)
-    {
-        switch ($operator) {
-            case self::OPERATOR_O2:
-                $this->operator = self::OPERATOR_O2;
-                break;
-            case self::OPERATOR_ORANGE:
-                $this->operator = self::OPERATOR_ORANGE;
-                break;
-            case self::OPERATOR_TMOBILE:
-                $this->operator = self::OPERATOR_TMOBILE;
-                break;
-            case self::OPERATOR_VODAFONE:
-                $this->operator = self::OPERATOR_VODAFONE;
-                break;
-            default:
-                throw new RequestException("Request: Uknown operator '$operator'.");
-        }
-    }
+	public function getOperator(): string
+	{
+		return $this->operator;
+	}
 
-    /**
-     * @return string
-     */
-    public function getOperator()
-    {
-        return $this->operator;
-    }
+	public function getPhone(): string
+	{
+		return $this->phone;
+	}
 
-    /**
-     * @return string
-     */
-    public function getPhone()
-    {
-        return $this->phone;
-    }
+	public function getShortcode(): string
+	{
+		return $this->shortcode;
+	}
 
-    /**
-     * @return string
-     */
-    public function getShortcode()
-    {
-        return $this->shortcode;
-    }
+	public function getText(): string
+	{
+		return $this->text;
+	}
 
-    /**
-     * @return string
-     */
-    public function getText()
-    {
-        return $this->text;
-    }
+	public function getType(): int
+	{
+		return self::TYPE_SMS;
+	}
 
-    /**
-     * @return int
-     */
-    public function getType()
-    {
-        return self::TYPE_SMS;
-    }
 }
