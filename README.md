@@ -4,13 +4,13 @@
 
 -----
 
-[![Build Status](https://img.shields.io/travis/contributte/mobilni-platby.svg?style=flat-square)](https://travis-ci.org/contributte/elasticsearch)
-[![Code coverage](https://img.shields.io/coveralls/contributte/mobilni-platby.svg?style=flat-square)](https://coveralls.io/r/contributte/elasticsearch)
-[![Licence](https://img.shields.io/packagist/l/contributte/elasticmobilni-platbysearch.svg?style=flat-square)](https://packagist.org/packages/contributte/elasticsearch)
+[![Build Status](https://img.shields.io/travis/contributte/mobilni-platby.svg?style=flat-square)](https://travis-ci.org/contributte/mobilni-platby)
+[![Code coverage](https://img.shields.io/coveralls/contributte/mobilni-platby.svg?style=flat-square)](https://coveralls.io/r/contributte/mobilni-platby)
+[![Licence](https://img.shields.io/packagist/l/contributte/mobilni-platby.svg?style=flat-square)](https://packagist.org/packages/contributte/mobilni-platby)
 
-[![Downloads this Month](https://img.shields.io/packagist/dm/contributte/mobilni-platby.svg?style=flat-square)](https://packagist.org/packages/contributte/elasticsearch)
-[![Downloads total](https://img.shields.io/packagist/dt/contributte/mobilni-platby.svg?style=flat-square)](https://packagist.org/packages/contributte/elasticsearch)
-[![Latest stable](https://img.shields.io/packagist/v/contributte/mobilni-platby.svg?style=flat-square)](https://packagist.org/packages/contributte/elasticsearch)
+[![Downloads this Month](https://img.shields.io/packagist/dm/contributte/mobilni-platby.svg?style=flat-square)](https://packagist.org/packages/contributte/mobilni-platby)
+[![Downloads total](https://img.shields.io/packagist/dt/contributte/mobilni-platby.svg?style=flat-square)](https://packagist.org/packages/contributte/mobilni-platby)
+[![Latest stable](https://img.shields.io/packagist/v/contributte/mobilni-platby.svg?style=flat-square)](https://packagist.org/packages/contributte/mobilni-platby)
 
 ## Discussion / Help
 
