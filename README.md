@@ -24,10 +24,10 @@ $ composer require contributte/mobilni-platby
 
 ## Versions
 
-| State   | Version    | Branch   | PHP     |
-|---------|------------|----------|---------|
-| dev     | dev-master | `master` | `>=7.1` |
-| stable  | `^0.1`     | `master` | `>=7.1` |
+| State       | Version | Branch   | PHP      |
+|-------------|---------|----------|----------|
+| dev         | `^0.2`  | `master` | `>= 7.1` |
+| stable      | `^0.1`  | `master` | `>= 7.1` |
 
 ## Overview
 
