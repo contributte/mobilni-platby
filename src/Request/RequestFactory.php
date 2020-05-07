@@ -42,14 +42,14 @@ class RequestFactory
 			}
 		}
 
-		$id = $this->request->getQuery('id');
+		$id = (int) $this->request->getQuery('id');
 		$phone = $this->request->getQuery('phone');
 		$shortcode = $this->request->getQuery('shortcode');
 		$text = $this->request->getQuery('sms');
-		$timestamp = $this->request->getQuery('timestamp');
+		$timestamp = (int) $this->request->getQuery('timestamp');
 		$operator = $this->request->getQuery('operator');
 		$country = $this->request->getQuery('country');
-		$att = $this->request->getQuery('att');
+		$att = (int) $this->request->getQuery('att');
 
 		$request = new SmsRequest($id, $phone, $shortcode, $text, $timestamp, $operator, $country, $att);
 		return $request;
@@ -68,12 +68,12 @@ class RequestFactory
 			}
 		}
 
-		$id = $this->request->getQuery('id');
-		$request = $this->request->getQuery('request');
+		$id = (int) $this->request->getQuery('id');
+		$request = (int) $this->request->getQuery('request');
 		$message = $this->request->getQuery('message');
 		$status = $this->request->getQuery('status');
-		$timestamp = $this->request->getQuery('timestamp');
-		$att = $this->request->getQuery('att');
+		$timestamp = (int) $this->request->getQuery('timestamp');
+		$att = (int) $this->request->getQuery('att');
 
 		$request = new ConfirmRequest($id, $request, $message, $status, $timestamp, $att);
 		return $request;
