@@ -4,6 +4,7 @@ namespace Contributte\MobilniPlatby\Request;
 
 use Contributte\MobilniPlatby\RequestException;
 use Nette\Http\Request;
+use Nette\Utils\DateTime;
 
 class RequestFactory
 {
@@ -46,12 +47,12 @@ class RequestFactory
 		$phone = $this->request->getQuery('phone');
 		$shortcode = $this->request->getQuery('shortcode');
 		$text = $this->request->getQuery('sms');
-		$timestamp = (int) $this->request->getQuery('timestamp');
+		$timestamp = DateTime::from($this->request->getQuery('timestamp'));
 		$operator = $this->request->getQuery('operator');
 		$country = $this->request->getQuery('country');
 		$att = (int) $this->request->getQuery('att');
 
-		$request = new SmsRequest($id, $phone, $shortcode, $text, $timestamp, $operator, $country, $att);
+		$request = new SmsRequest($id, $phone, $shortcode, $text, $timestamp->getTimestamp(), $operator, $country, $att);
 		return $request;
 	}
 
@@ -72,10 +73,10 @@ class RequestFactory
 		$request = (int) $this->request->getQuery('request');
 		$message = $this->request->getQuery('message');
 		$status = $this->request->getQuery('status');
-		$timestamp = (int) $this->request->getQuery('timestamp');
+		$timestamp = DateTime::from($this->request->getQuery('timestamp'));
 		$att = (int) $this->request->getQuery('att');
 
-		$request = new ConfirmRequest($id, $request, $message, $status, $timestamp, $att);
+		$request = new ConfirmRequest($id, $request, $message, $status, $timestamp->getTimestamp(), $att);
 		return $request;
 	}
 
