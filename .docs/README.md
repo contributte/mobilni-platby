@@ -3,8 +3,8 @@
 ## Content
 
 - [Usage - how to use](#usage)
-  - [Custom dispatcher](#custom-dispatcher)
-  - [Example presenter](#example-presenter)
+	- [Custom dispatcher](#custom-dispatcher)
+	- [Example presenter](#example-presenter)
 
 ## Usage
 

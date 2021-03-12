@@ -18,8 +18,8 @@
 
 ## Install
 
-```sh
-$ composer require contributte/mobilni-platby
+```bash
+composer require contributte/mobilni-platby
 ```
 
 ## Versions
