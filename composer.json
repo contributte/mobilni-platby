@@ -1,41 +1,43 @@
 {
-    "name": "contributte/mobilni-platby",
-    "description": "Dispatcher for Mobile Payments (www.mobilniplatby.cz) for Nette Framework.",
-    "type": "library",
-    "license": ["MIT"],
-    "homepage": "https://github.com/contributte/mobilni-platby",
-    "authors": [
-        {
-            "name": "Milan Felix Sulc",
-            "homepage": "http://jfx.cz"
-        }
-    ],
-    "require": {
-        "php": ">=7.1",
-        "nette/application": "~2.4.12",
-        "nette/http": "~2.4.10",
-        "nette/utils": "~2.5.3"
-    },
-    "require-dev": {
-        "ninjify/qa": "^0.8.0",
-        "ninjify/nunjuck": "^0.3.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Contributte\\MobilniPlatby\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\Cases\\": "tests/cases",
-            "Tests\\Fixtures\\": "tests/fixtures"
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "extra": {
-        "branch-alias": {
-            "dev-master": "0.2.x-dev"
-        }
+  "name": "contributte/mobilni-platby",
+  "description": "Dispatcher for Mobile Payments (www.mobilniplatby.cz) for Nette Framework.",
+  "type": "library",
+  "license": [
+    "MIT"
+  ],
+  "homepage": "https://github.com/contributte/mobilni-platby",
+  "authors": [
+    {
+      "name": "Milan Felix Sulc",
+      "homepage": "http://jfx.cz"
     }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "nette/application": "~2.4.12",
+    "nette/http": "~2.4.10",
+    "nette/utils": "~2.5.3"
+  },
+  "require-dev": {
+    "ninjify/qa": "^0.8.0",
+    "ninjify/nunjuck": "^0.3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Contributte\\MobilniPlatby\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\Cases\\": "tests/cases",
+      "Tests\\Fixtures\\": "tests/fixtures"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.2.x-dev"
+    }
+  }
 }
